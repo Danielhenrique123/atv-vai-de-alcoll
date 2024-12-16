@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/reset.css" type="text/css" />
+    <link rel="stylesheet" href="style/style.css" type="text/css" />
+
+</head>
+
+<body>
+
+    <main>
+
+        <form action="#">
+            <fieldset>
+                <legend>vai de taxi </legend>
+                <p>
+                    <label for="distancia">Distancia</label>
+                    <input type="text" id="distancia">
+
+                </p>
+
+                <p>
+                    <label for="bandeira">Bandeira</label>
+                    <select name="bandeira" id="bandeira">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="taximetro">valor do taximetro</label>
+                    <input type="number" id="taximetro">
+                </p>
+
+                <p>
+                    <label for="desonto">Desconto</label>
+                    <input type="number" id="Desconto">
+                </p>
+                <p>
+                    <input type="button" id="btn-enviar" value="enviar">
+                    <input type="reset" value="limpar">
+                </p>
+            </fieldset>
+        </form>
+        <div id="mensagem"> </div>
+    </main>
+    <script>
+        let my_element = document.getElementById("btn-enviar");
+        my_element.addEventListener("click", function (e) {
+           
+            let valor = 0;
+            let bandeira = document.getElementById("bandeira").value;
+            let distancia =parseFloat(document.getElementById("distancia").value);
+            let mensagem = document.getElementById("mensagem");
+            if(bandeira == 1) {
+
+             valor = 3.2 + distancia * 1.8;
+             console.log(valor)
+
+            }
+
+            else  {
+
+                 valor = 3.2 + distancia * 2.34;
+                 console.log(valor);
+
+            }
+
+            mensagem.innerHTML = 'valor de corida '+valor;
+        });
+
+    </script>
+
+</body>
+
+
+</html>
